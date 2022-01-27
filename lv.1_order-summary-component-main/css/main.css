@@ -1,0 +1,97 @@
+body{
+    margin:0;
+    padding:0;
+}
+
+/* SECTION */
+.container{
+    background:hsl(225, 100%, 94%);
+}
+.section--inner{
+    width:400px;
+    height:700px;
+    margin:0 auto;
+    position:relative;
+}
+.section--card{
+    position:absolute;
+    width:100%;
+    height:500px;
+    background:white;
+    top:15%;
+    border-radius: 8%;
+    overflow: hidden;
+}
+.card--top{
+    background-image: url("/images/illustration-hero.svg");
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center bottom;
+    width:100%;
+    height:40%;
+    
+}
+.card--bottom{
+    width:90%;
+    height:60%;
+    margin:0 auto;
+}
+.card--summary{
+    width:80%;
+    height:50%;
+    margin:0 auto;
+    text-align: center;/*span을 가운데 정렬 해준다.*/
+    font-size: 14px;
+    color:rgb(60, 71, 82);
+}
+.summary__text{
+    font-size: 20px;
+    font-weight: 700;
+    display:inline-block; /*span을 가운데 정렬 해준다.*/
+    margin-bottom:10px;
+    margin-top:20px;
+}
+.card--box{
+    display: flex;
+    margin:0 auto;
+    width:90%;
+    height:25%;
+    background:  hsl(225, 100%, 98%);
+    align-items: center;
+    padding-left: 20px;
+    margin-top:-25px;
+}
+.music{
+    margin-right:15px;
+    align-items: center;
+    
+    width:20%;
+    height:70%;
+    background-image: url("/images/icon-music.svg");
+    background-repeat: no-repeat;
+}
+.text__1{
+    font-size: 15px;
+    font-weight: 700;
+}
+.text__2{
+    font-size: 12px;
+    color:lightslategray;
+}
+.music__change{
+    margin-left:56px;
+}
+.btn{
+    margin-top:10px;
+    width:100%;
+    height:10%;
+    border-radius: 10%;
+}
+.btn--pay{
+    background:hsl(225, 84%, 38%);
+    color:white;
+    box-shadow: 1px 2px 12px 0px rgb(23, 8, 165);
+}
+.btn--cancel{
+    background:white;
+}
