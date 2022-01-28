@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link type="text/css" rel="stylesheet" href="./css/main.css">
   <title>Frontend Mentor | Tip calculator app</title>
@@ -22,17 +24,17 @@
         <div class="left__inner">
           <div class="bill">
             <span>Bill</span><br>
-            <input type="text" class="dollar">
+            <input type="text" class="dollar" id="input_dollar">
           </div>
           <div class="tip">
             <span>Select Tip %</span>
             <div class="tip__con">
-              <button class="btn">5%</button>
-              <button class="btn">10%</button>
-              <button class="btn">15%</button>
-              <button class="btn">25%</button>
-              <button class="btn">50%</button>
-              <button class="btn">Custom</button>
+              <button class="btn" value="0.05">5%</button>
+              <button class="btn" value="0.1">10%</button>
+              <button class="btn active" value="0.15">15%</button>
+              <button class="btn" value="0.25">25%</button>
+              <button class="btn" value="0.5">50%</button>
+              <button class="btn" value="">Custom</button>
             </div>
           </div>
           <div class="nop">
@@ -44,9 +46,9 @@
       <div class="card--right">
         <div class="right__inner">
           <div class="amount right__grid right__person"><span>Tip Amount</span><br>/ person</div>
-          <div class="amount__text right__grid">dd</div>
+          <div class="amount__text right__grid">$4.27</div>
           <div class="total right__grid right__person"><span>Total</span><br>/ person</div>
-          <div class="amount__text right__grid">dd</div>
+          <div class="total__text right__grid">$32.79</div>
           <button class="reset">RESET</button>
         </div>
       </div>
@@ -55,21 +57,63 @@
     </div>
 </div>
 </section>
-
-
-  
-
-  Tip Amount
-  / person
-
-  Total
-  / person
-
-  Reset
   
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      const tipBtn = $(".tip__con > button");
+      let tip=$('.active').val();
+      let input_dollar,tipAmount,people,total;
+      
+      getTipVal();
+      $(tipBtn).click(function(){
+
+        $(tipBtn).not(this).removeClass('active');
+        const className=$(this).attr('class');
+        $(this).toggleClass('active');
+
+        getTipVal();
+        
+      });
+      /* input 에 값이 입력될때마다 value 값 가져오기 */
+      $("#input_dollar").on('input',function(){
+        getTipVal();
+
+      });
+
+      /* 사람 수 input에 값이 입력될때마다 vale 값 가져오기 */
+      $(".people").on('input',function(){
+        getTipVal();
+      })
+
+      $(".reset").click(function(){
+        $('#input_dollar').val('');
+        $('.people').val('');
+        $('.amount__text').text('$ 0');
+        $('.total__text').text('$ 0');
+      });
+
+    }); /* document ready end */
+
+    //입력된 값들을 가져와서 계산한다. 
+    function getTipVal(){
+      input_dollar = $('#input_dollar').val();
+      tip = $('.active').val();
+      people = $('.people').val();
+      tipAmount = input_dollar * tip / people;
+      tipAmount = tipAmount.toFixed(2);
+      total = parseFloat(input_dollar) + parseFloat(tipAmount);
+      if(tipAmount=='Infinity'){
+        $('.amount__text').text('0');
+      }else{
+        $('.amount__text').text('$'+tipAmount);
+      }  
+      $('.total__text').text('$'+total);
+    }
+  </script>
 </body>
 </html>

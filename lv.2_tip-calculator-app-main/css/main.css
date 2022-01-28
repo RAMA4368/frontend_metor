@@ -1,7 +1,7 @@
 body{
     margin:0;
     padding:0;
-    
+    font-family: 'Space Mono', monospace;
 }
 /* SECTION */
 .container{
@@ -31,8 +31,6 @@ body{
 
 .card--right{
     width:50%;
-    /* height:100%; */
-    background:lightgreen;
 }
 
 /* card-left */
@@ -53,6 +51,10 @@ body{
 .nop{
     height:25%;
 }
+.active{
+    background:darkcyan!important;
+    color:black!important;
+}
 .dollar{
     background-color :hsl(186, 57%, 89%);
     background-image:url("/images/icon-dollar.svg");
@@ -64,12 +66,20 @@ body{
     width: 100%;
     text-align:right;/*오른쪽부터 채우도록*/
     border-radius: 4px;
+    font-family: 'Space Mono', monospace;
+    color:rgb(2, 119, 119);
+    font-weight: 600;
+    
 }
 .people{
     background-image: url("/images/icon-person.svg");
 }
 .dollar:focus{
     border:none;
+    font-family: 'Space Mono', monospace;
+    color:rgb(2, 119, 119);
+    font-weight: 600;
+    font-size:20px;
 }
 .tip__con{
     width:100%;
@@ -81,10 +91,11 @@ body{
 .btn{
     margin:3px;
     border-radius: 4px;
-    background:hsl(185, 77%, 12%);
+    background:hsl(180, 89%, 11%);
     color:white;
     border:none;
     cursor: pointer;
+    font-family: 'Space Mono', monospace;
 }
 .tip__con > button:nth-child(6){
     background:hsl(180, 27%, 85%);
@@ -107,8 +118,9 @@ body{
     border-radius: 10px;
     display: grid;
     grid-template-columns:1fr 1fr;
-    grid-template-rows: 30% 30% 30%;
+    grid-template-rows: 25% 25% 25% 25%;
     text-align: center;
+    align-items: center;
 }
 .right__inner span{
     color:white;
@@ -118,12 +130,26 @@ body{
     font-size: 10px;
 }
 .reset{
-    margin-top:40px;
+    margin-top:90px;
     width:80%;
     margin-left:30px;
     height:40px;
     border-radius: 8px;
+    background:darkcyan;
+    color:black;
+    border:none;
+    font-family: 'Space Mono', monospace;
 }
 .right__inner > button{
     grid-column: span 2;
+}
+.amount__text{
+    color: rgb(6, 139, 139);
+    font-size: 20px;
+    font-weight: 600;
+}
+.total__text{
+    color: rgb(6, 139, 139);
+    font-size: 20px;
+    font-weight: 600;
 }
