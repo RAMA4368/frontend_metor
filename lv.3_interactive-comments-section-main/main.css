@@ -1,0 +1,83 @@
+*{
+    margin:0;
+    padding:0;
+}
+.container{
+    background:rgb(245, 246, 248);
+}
+
+.inner{
+    width:700px;
+    background:lightslategrey;
+    margin: 0 auto;
+    height:800px;
+    position:relative;
+}
+.chat--box{
+    position:absolute;
+    width:100%;
+    height:90%;
+    margin-top:2.5em;
+}
+.contents{
+    height:70%;
+    background:lightyellow;
+}
+.send--box{
+    height:30%;
+    background:lightsteelblue;
+}
+
+/* contents box */
+.msg--box{
+    margin:0 auto;
+    padding:20px;
+    width:90%;
+    display:grid;
+    background:white;
+    grid-template-rows:repeat(2,50px);/*2개 행*/
+    grid-template-columns:15% 42.5% 42.5%;/*3개 열*/
+}
+.box{
+    border:1px solid black;
+    display:grid;
+    align-items: center;
+    justify-content: center;
+}
+.box_count{
+    position:relative;
+    display:block;
+}
+.box img{
+    vertical-align:middle;
+    width:100%;
+}
+.id-box img{
+    width:50%;
+
+}
+.box span{
+    margin-left: auto;
+    margin-right: auto;
+    width:100%;
+}
+
+.box:nth-child(1){
+    height:100%;
+    width:50px;
+    grid-row:span 2;
+    background:rgb(235, 233, 232);
+    border-radius: 20%;
+}
+.box:nth-child(2){
+    height:70%;
+    grid-column:span 2;
+    background:linen;
+    display:grid;
+    grid-template-columns:10% 15% 20% 35% 20%;
+}
+.box:nth-child(3){
+    height:100%;
+    grid-column:span 2;
+    background:linen;
+}
