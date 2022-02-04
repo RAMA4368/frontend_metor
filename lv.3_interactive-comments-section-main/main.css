@@ -3,33 +3,33 @@
     padding:0;
 }
 .container{
-    background:rgb(245, 246, 248);
+    background:rgb(241, 242, 245);
+    /* position:relative; */
 }
 
 .inner{
-    width:700px;
-    background:lightslategrey;
+    width: 68em;
+    /* background:lightslategrey; */
     margin: 0 auto;
     height:800px;
     position:relative;
+    display: table-cell;
 }
 .chat--box{
-    position:absolute;
+    /* position:absolute; */
     width:100%;
-    height:90%;
+    height:80%;
     margin-top:2.5em;
 }
 .contents{
-    height:70%;
-    background:lightyellow;
+    height:85%;
+    /* background:lightyellow; */
 }
-.send--box{
-    height:30%;
-    background:lightsteelblue;
-}
+
 
 /* contents box */
 .msg--box{
+    border-radius: 10px;
     margin:0 auto;
     padding:20px;
     width:90%;
@@ -37,9 +37,10 @@
     background:white;
     grid-template-rows:repeat(2,50px);/*2개 행*/
     grid-template-columns:15% 42.5% 42.5%;/*3개 열*/
+    margin-top:15px;
 }
 .box{
-    border:1px solid black;
+    /* border:1px solid black; */
     display:grid;
     align-items: center;
     justify-content: center;
@@ -56,13 +57,68 @@
     width:50%;
 
 }
-.box span{
+.box__content{
+    font-size: 12px;
+    font-weight: 400;
+    font-family: 'Rubik', sans-serif;
+    
+}
+.box .box__number{
     margin-left: auto;
     margin-right: auto;
     width:100%;
+    font-size: 16px;
+    font-weight: 700;
+    color: hsl(238, 40%, 52%);
+    font-family: 'Rubik', sans-serif;
+}
+.reply__img{
+    width:20%!important;
+    margin:0 auto;
+    
+}
+.character__name{
+    font-weight: 700;
+    color: hsl(238, 40%, 52%);
+    font-family: 'Rubik', sans-serif;
+}
+.write__date{
+    color:hsl(212, 24%, 26%);
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+}
+.id-box h5::before{
+    content:url("./images/icon-reply.svg");
+    margin:20px;
+}
+.id-box h5{
+    font-size: 1rem;
+}
+.my-box .delete{
+    margin-left: 8em;
+    color:rgb(161, 3, 3);
+    
+}
+.my-box .delete:hover{
+    cursor: pointer;
+    text-shadow: 6px 6px 5px gray;
+    color:rgb(161, 3, 3);
+}
+.my-box h5:hover{
+    cursor: pointer;
+    text-shadow: 6px 6px 5px gray;
+    color:rgb(13, 13, 155);
+}
+.my-box .delete:before{
+    content:url("./images/icon-delete.svg");
+}
+
+.my-box h5::before{
+    content:url("./images/icon-edit.svg");
 }
 
 .box:nth-child(1){
+    margin-left:7px;
     height:100%;
     width:50px;
     grid-row:span 2;
@@ -72,12 +128,53 @@
 .box:nth-child(2){
     height:70%;
     grid-column:span 2;
-    background:linen;
+    /* background:linen; */
     display:grid;
     grid-template-columns:10% 15% 20% 35% 20%;
 }
 .box:nth-child(3){
     height:100%;
     grid-column:span 2;
-    background:linen;
+    overflow: hidden;
+    /* background:linen; */
 }
+
+
+/* SendBox */
+
+.send--box{
+    height:15%;
+    /* background:lightsteelblue; */
+    position:relative;
+}
+.send--inner{
+    height: 80%;
+    width:80%;
+    display:grid;
+    grid-template-columns: 15% 65% 20%;
+    margin:0 auto;
+}
+.send--inner textarea{
+    border:1px solid hsl(223, 19%, 93%);
+    font-weight: 400;
+    color: hsl(240, 100%, 0%);
+    font-family: 'Rubik', sans-serif;
+    text-indent: 10px;
+
+}
+.send--inner button{
+    height:70%;
+    margin-left:10px;
+    background: hsl(241, 68%, 31%);
+    border-radius: 15px;
+    color:white;
+}
+
+
+
+/* comment-box */
+.comment-box{
+    width:80%;
+    margin-left:6.3em;
+}
+
